@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Minimal output collatzer
 
 import sys
 
@@ -15,9 +16,7 @@ def collatz(initial):
         if n == initial:
             raise RuntimeError(f'{n} == {initial}')
         steps.append(n)
-    print(f'n = {initial}: {len(steps)} steps')
-    print(f'sequence: {" -> ".join(map(str, steps))}')
-    print('---')
+    print(f'\rn = {initial}: {len(steps)} steps', end=' ')
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "neg":
